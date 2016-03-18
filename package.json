@@ -1,0 +1,17 @@
+{
+  "name": "phaser-rpg",
+  "version": "1.0.0",
+  "description": "A simple RPG in Phaser",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "postinstall": "bower install",
+    "start": "http-server ./src/ -p 8000 -c-1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "leewalkergm",
+  "license": "ISC",
+  "dependencies": {
+    "phaser": "^2.4.6"
+  }
+}

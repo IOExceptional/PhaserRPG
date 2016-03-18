@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lee's PhaserRPG</title>
+        <style>
+            body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            #container {
+                height: 600px;
+                width: 800px;
+                position: relative;
+            }
+            #ui {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            #healthbar {
+                position: relative;
+                top: 10px;
+                left: 10px;
+                background: url('assets/healthbar_bg.png') repeat;
+            }
+            #healthbarContent {
+                background: url('assets/healthbar.png') repeat;
+            }
+            #healthbarText {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                color: #000000;
+                font-weight: bold;
+                text-align: center;
+
+                padding-top: 2px;
+            }
+            #stats {
+                position: absolute;
+                top: 40px;
+                left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="main"></div>
+            <div id="ui">
+                <div id="healthbar">
+                    <div id="healthbarContent"></div>
+                    <div id="healthbarText"></div>
+                </div>
+                <div id="stats">
+                    <h3>Levels</h3>
+                    <p>
+                        Attack: <span id="statAttack"></span><br>
+                        Defence: <span id="statDefence"></span><br>
+                        Health: <span id="statHealth"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/vendor/phaser.min.js"></script>
+        <script data-main="scripts/main" src="scripts/vendor/require.js"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "phaser-rpg",
+  "description": "A simple RPG in Phaser",
+  "main": "index.js",
+  "authors": [
+    "leewalkergm"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
