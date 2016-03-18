@@ -57,7 +57,6 @@ define(['settings'], function (settings) {
         var velocity = char.modifiers.velocity;
 
         if (cursors.up.isDown) {
-            takeDamage(1);
             player.body.velocity.y = -velocity;
         } else if (cursors.down.isDown) {
             player.body.velocity.y = velocity;
@@ -89,12 +88,12 @@ define(['settings'], function (settings) {
 
         if(health < char.attributes.health.min) {
             var xpAmount = amount - health;
-            addSkillXp('defence', xpAmount * settings.damageDefenceXpModifier);
+            addSkillXp('defence', xpAmount * settings.xpModifier);
             health = char.attributes.health.min;
         } else if (health > char.attributes.health.max) {
             health = char.attributes.health.max;
         } else {
-            addSkillXp('defence', amount * settings.damageDefenceXpModifier);
+            addSkillXp('defence', amount * settings.xpModifier);
         }
 
         char.modifiers.health = health;

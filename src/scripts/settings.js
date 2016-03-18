@@ -5,6 +5,6 @@ define(function () {
            height: 20
        },
        levelConstant: 0.11,
-       damageDefenceXpModifier: 10
+       xpModifier: 5
    };
 });
