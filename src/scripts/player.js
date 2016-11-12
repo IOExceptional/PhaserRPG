@@ -42,12 +42,14 @@ define(['settings'], function (settings) {
     };
 
     var create = function (game) {
-        player = game.add.sprite(game.world.centerX - (width/2), game.world.centerY - (height/2), 'char_sheet');
+        player = game.add.sprite(75, 75, 'char_sheet');
 
         cursors = game.input.keyboard.createCursorKeys();
 
         game.physics.arcade.enable(player);
         game.camera.follow(player);
+
+        player.body.collideWorldBounds = true;
     };
 
     var update = function (game) {
@@ -70,7 +72,9 @@ define(['settings'], function (settings) {
     };
 
     var render = function (game) {
-        //game.debug.body(player);
+        if(settings.debug.collision) {
+            game.debug.body(player);
+        }
     };
 
     var getHealth = function () {
@@ -142,6 +146,10 @@ define(['settings'], function (settings) {
         }
     };
 
+    var getPlayerSprite = function () {
+        return player;
+    };
+
     return {
         'preload': preload,
         'create': create,
@@ -152,6 +160,7 @@ define(['settings'], function (settings) {
         'takeDamage': takeDamage,
         'getSkillLevel': getSkillLevel,
         'getSkillXp': getSkillXp,
-        'addSkillXp': addSkillXp
+        'addSkillXp': addSkillXp,
+        'getPlayerSprite': getPlayerSprite
     }
 });

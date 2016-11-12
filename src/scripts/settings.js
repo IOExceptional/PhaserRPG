@@ -1,5 +1,8 @@
 define(function () {
    return {
+       debug: {
+           collision: false
+       },
        healthbar: {
            width: 200,
            height: 20

@@ -1,5 +1,6 @@
-define(function () {
+define(['settings'], function (settings) {
     var layerNames = [
+        'collision',
         'floor',
         'stall-area-floor',
         'stall-depot',
@@ -24,12 +25,25 @@ define(function () {
         for(var layerI = 0; layerI < layerNames.length; layerI++) {
             layers[layerI] = map.createLayer(layerNames[layerI]);
             layers[layerI].resizeWorld();
+            if(layerNames[layerI] == 'collision') {
+                layers[layerI].collisionLayer = true;
+                layers[layerI].debug = settings.debug.collision;
+            }
         }
 
-    }
+        map.setCollision(37);
+    };
+
+    var update = function (game, player) {
+        for(var layerI = 0; layerI < layers.length; layerI++) {
+            game.physics.arcade.collide(player.getPlayerSprite(), layers[layerI]);
+        }
+
+    };
 
     return {
         'preload': preload,
-        'create': create
+        'create': create,
+        'update': update
     }
 });

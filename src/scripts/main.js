@@ -18,6 +18,7 @@ requirejs(['map', 'ui', 'player'], function (map, ui, player) {
     }
 
     function update() {
+        map.update(game, player);
         player.update(game);
         try {
             ui.update();
